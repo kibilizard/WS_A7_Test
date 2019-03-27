@@ -7,7 +7,7 @@ import { IWSMessage, ConnStatus, ISearchQueryData, IAuthQueryData } from "./inte
 
 @Injectable()
 export class ConnectionService {
-    public conSubject: Subject<IWSMessage>;
+    private conSubject: Subject<IWSMessage>;
     public messages: Observable<IWSMessage>;
     public status: BehaviorSubject<ConnStatus>;
 
