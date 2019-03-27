@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { ISearchItem } from "../../websocket/interfaces";
-import { isNgTemplate } from "@angular/compiler";
 
 @Component({
     selector: 'search-item',
@@ -14,5 +13,10 @@ export class SearchItemComponent {
     }
     get discount() {
         return this.commerce.discount;
+    }
+    get stars(): number[] {
+        let stars: number[] = [];
+        for (let i = 0; i < this.item.info.cat + 3; i++ ) stars.push(i);
+        return stars;
     }
 }

@@ -32,11 +32,13 @@
     font-weight: bold;
     padding-top: 5px;
 }
-.info-category {
+.one-star {
     background-image: url(/assets/star-64x64.png);
     height: 22px;
-    background-repeat: repeat-x;
+    width: 22px;
+    display: inline-block;
     background-size: auto 100%;
+    background-repeat: no-repeat;
 }
 .info-addr-title {
     font-size: 18px;

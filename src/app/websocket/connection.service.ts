@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { WebsocketService } from "./websocket.service";
 import { Subject, BehaviorSubject, Observable } from "rxjs";
 import { map, filter, take } from 'rxjs/operators';
-import { CONNECT_URL, AUTH, SEARCH, QUERYBASE } from "./constants";
-import { IWSMessage, ConnStatus, ISearchQueryData } from "./interfaces";
+import { CONNECT_URL, AUTH, QUERYBASE } from "./constants";
+import { IWSMessage, ConnStatus, ISearchQueryData, IAuthQueryData } from "./interfaces";
 
 @Injectable()
 export class ConnectionService {
@@ -47,10 +47,10 @@ export class ConnectionService {
         );
     }
 
-    public authorize() {
+    public authorize(data: IAuthQueryData = AUTH.data) {
         this.status.next(ConnStatus.inAuth);
 
-        let query: IWSMessage = Object.assign({},QUERYBASE.auth, {data: AUTH.data});
+        let query: IWSMessage = Object.assign({},QUERYBASE.auth, {data});
 
         this.conSubject.next(query);
 

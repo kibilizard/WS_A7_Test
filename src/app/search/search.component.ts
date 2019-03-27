@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from "@angular/core";
 import { ConnectionService } from "../websocket/connection.service";
 import { ISearchData, ISearchQueryData, ISearchItem, ConnStatus } from "../websocket/interfaces";
-import { Subject, interval, Subscription, Observable, timer, BehaviorSubject } from "rxjs";
-import { filter, map, takeWhile, delay, timeout, take } from "rxjs/operators";
+import { Subscription, Observable, timer, BehaviorSubject } from "rxjs";
+import { filter, map, take } from "rxjs/operators";
 import { QUERYBASE, SEARCH } from "../websocket/constants";
 import { Router } from "@angular/router";
 
@@ -13,11 +13,13 @@ import { Router } from "@angular/router";
 })
 export class SearchComponent implements OnDestroy{
     private searchData$: Observable<ISearchData>;
+    private searchTimer: BehaviorSubject<boolean>;
+
     private searchDataSub: Subscription;
     private connStatusSub: Subscription;
+
     private lastHash: string;
     public searchDone: boolean = false;
-    private searchTimer: BehaviorSubject<boolean>;
 
     public items: ISearchItem[] = [];
     

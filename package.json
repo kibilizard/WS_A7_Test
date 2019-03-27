@@ -1,7 +1,7 @@
 {
-    "name": "exampleapp",
+    "name": "wsa7test",
     "version": "0.0.1",
-    "description": "Example Angular 7 project",
+    "description": "Angular 7 + WebSocket Test project",
     "author": "Alina Makeeva aka KibiLizard",
     "scripts": {
         "dev": "webpack-dev-server --hot --open",
