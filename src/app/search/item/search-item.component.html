@@ -1,0 +1,32 @@
+<div class="row search-row">
+    <div class="col-3 p-0">
+        <div 
+            class="main-image" 
+            [ngStyle]="{'background-image': 'url(https://img1.night2stay.com'+item.info.img+')'}"
+            >
+        </div>
+        <!--img [src]="'https://img1.night2stay.com'+item.info.img" style="width:200px;height:200px"/-->
+        <div *ngIf="discount" class="discount">Сэкономьте: {{discount}}%</div>
+    </div>
+    <div class="col info-box">
+        <div class="info-name"> {{item.info.name}}</div>
+        <div class="info-category" [ngStyle]="{width: (22 * (item.info.cat + 3))+'px'}"></div>
+        <div class="info-addr">
+            <div class="info-addr-title">Расположение</div>
+            <div class="info-addr-content">{{item.info.addr}}</div>
+        </div>
+    </div>
+    <div class="col-2 cost-box">
+        <div class="price">
+            <div class="disc-price" *ngIf="discount">
+                {{commerce.payment | price}}
+            </div>
+            <div class="main-price">
+                {{(discount ? commerce.tpayment : commerce.payment) | price}}
+            </div>
+        </div>
+        <button type="button" class="btn btn-success go-btn">
+            Посмотреть
+        </button>
+    </div>
+</div>

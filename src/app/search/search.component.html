@@ -1,0 +1,11 @@
+<div class="search-info">
+    <h3 *ngIf="!searchDone; else elseBlock">Поиск..</h3>
+    <ng-template #elseBlock>
+        <button class="btn btn-secondary" (click)="startSearch()" [disabled]="!searchDone" >Перезапустить поиск</button>
+    </ng-template>
+</div>
+<div class="container" *ngIf="items.length > 0">
+    <div class="search-container">
+        <search-item *ngFor="let item of items" [item]="item"></search-item>
+    </div>
+</div>

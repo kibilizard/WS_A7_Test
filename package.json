@@ -1,0 +1,35 @@
+{
+    "name": "exampleapp",
+    "version": "0.0.1",
+    "description": "Example Angular 7 project",
+    "author": "Alina Makeeva aka KibiLizard",
+    "scripts": {
+        "dev": "webpack-dev-server --hot --open",
+        "build": "webpack"
+    },
+    "dependencies": {
+        "@angular/common": "~7.0.0",
+        "@angular/compiler": "~7.0.0",
+        "@angular/core": "~7.0.0",
+        "@angular/forms": "~7.0.0",
+        "@angular/platform-browser": "~7.0.0",
+        "@angular/platform-browser-dynamic": "~7.0.0",
+        "@angular/router": "~7.0.0",
+        "core-js": "^2.5.7",
+        "rxjs": "^6.3.3",
+        "zone.js": "^0.8.26"
+    },
+    "devDependencies": {
+        "@types/node": "^10.12.0",
+        "angular2-template-loader": "^0.6.2",
+        "awesome-typescript-loader": "^5.2.1",
+        "file-loader": "^3.0.1",
+        "html-loader": "^0.5.1",
+        "raw-loader": "^0.5.1",
+        "typescript": "^3.0.0",
+        "uglifyjs-webpack-plugin": "^2.0.0",
+        "webpack": "^4.21.0",
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.9"
+    }
+}
